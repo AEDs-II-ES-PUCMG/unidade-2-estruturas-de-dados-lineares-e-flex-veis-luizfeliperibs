@@ -232,6 +232,8 @@ public class App {
             matriculaPilha.empilhar(matricula[i]);
         }
 
+        
+
         matriculaPilha.imprimePilha(matriculaPilha);
 
     }

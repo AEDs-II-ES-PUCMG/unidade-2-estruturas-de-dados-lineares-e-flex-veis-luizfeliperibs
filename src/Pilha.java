@@ -51,7 +51,17 @@ public class Pilha<E> {
 
 	}
 
-	
+	void imprimeCerto(){
+		Celula<E> atual = topo;
+		certo(atual);
+	}
+
+	void certo(Celula <E> atual){
+		if (atual != fundo) {
+			certo(atual.getProximo());
+			System.out.println(atual.getItem());
+		}
+	}
 
 	/**
 	 * Cria e devolve uma nova pilha contendo os primeiros numItens elementos
