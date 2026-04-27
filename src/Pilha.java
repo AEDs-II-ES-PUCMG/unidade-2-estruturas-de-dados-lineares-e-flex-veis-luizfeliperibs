@@ -40,6 +40,19 @@ public class Pilha<E> {
 
 	}
 
+	public void imprimePilha(Pilha<E> pilha){
+
+		Celula<E> aux = topo;
+		
+		while(aux != fundo){
+			System.out.println(aux.getItem());
+			aux = aux.getProximo();
+		}
+
+	}
+
+	
+
 	/**
 	 * Cria e devolve uma nova pilha contendo os primeiros numItens elementos
 	 * do topo da pilha atual.

@@ -210,12 +210,30 @@ public class App {
      */
     public static void finalizarPedido(Pedido pedido) {
     	
-    	// TODO
+
+        
     }
     
     public static void listarProdutosPedidosRecentes() {
     	
     	// TODO
+    }
+
+    public static void pilhaMatricula(){
+
+        //System.out.println("Qual o código de matrícula a ser empilhado?");
+        //int codigoMatricula = teclado.nextInt();
+
+        Integer[] matricula = {8, 3, 9, 2, 5, 6};
+
+        Pilha<Integer> matriculaPilha = new Pilha<>();
+
+        for(int i = 0; i< matricula.length; i++){
+            matriculaPilha.empilhar(matricula[i]);
+        }
+
+        matriculaPilha.imprimePilha(matriculaPilha);
+
     }
     
 	public static void main(String[] args) {
@@ -238,6 +256,7 @@ public class App {
                 case 4 -> pedido = iniciarPedido();
                 case 5 -> finalizarPedido(pedido);
                 case 6 -> listarProdutosPedidosRecentes();
+                case 7 -> pilhaMatricula();
             }
             pausa();
         }while(opcao != 0);       
