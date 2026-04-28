@@ -39,6 +39,10 @@ public class Pedido implements Comparable<Pedido> {
 		this.dataPedido = dataPedido;
 		this.formaDePagamento = formaDePagamento;
 	}
+
+	public int getQuantItensDePedido(){
+		return quantItensDePedido;
+	}
 	
 	public ItemDePedido[] getItensDoPedido() {
 		return itensDePedido;

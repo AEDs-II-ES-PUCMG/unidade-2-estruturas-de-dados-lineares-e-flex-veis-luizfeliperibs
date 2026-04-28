@@ -21,6 +21,9 @@ public class App {
 
     /** Pilha de pedidos */
     static Pilha<Pedido> pilhaPedidos = new Pilha<>();
+
+    /** Pilha de pedidos recentes */
+    static Pilha<Produto> pilhaPedidosRecentes = new Pilha<>();
         
     static void limparTela() {
         System.out.print("\033[H\033[2J");
@@ -64,6 +67,7 @@ public class App {
         System.out.println("4 - Iniciar novo pedido");
         System.out.println("5 - Fechar pedido");
         System.out.println("6 - Listar produtos dos pedidos mais recentes");
+        System.out.println("7 - Finalizar pedido");
         System.out.println("0 - Sair");
         System.out.print("Digite sua opção: ");
         return Integer.parseInt(teclado.nextLine());
@@ -210,13 +214,28 @@ public class App {
      */
     public static void finalizarPedido(Pedido pedido) {
     	
+        pilhaPedidos.empilhar(pedido);
 
+        ItemDePedido[] itensDoPedido = pedido.getItensDoPedido();
+
+        for(int i = 0; i<pedido.getQuantItensDePedido(); i++){
+
+            Produto produtoAtual = itensDoPedido[i].getProduto();
+
+            pilhaPedidosRecentes.empilhar(produtoAtual);
+
+        }
         
     }
     
     public static void listarProdutosPedidosRecentes() {
-    	
-    	// TODO
+
+        if(pilhaPedidosRecentes.vazia() == true){
+            System.out.println("Não há produtos recentes");
+        } else {
+            pilhaPedidosRecentes.imprimePilha(pilhaPedidosRecentes);
+        }
+
     }
 
     public static void pilhaMatricula(){
