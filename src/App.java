@@ -73,6 +73,7 @@ public class App {
         System.out.println("5 - Fechar pedido");
         System.out.println("6 - Listar produtos dos pedidos mais recentes");
         System.out.println("7 - Finalizar pedido");
+        System.out.println("8 - Contar caracteres do nome");
         System.out.println("0 - Sair");
         System.out.print("Digite sua opção: ");
         return Integer.parseInt(teclado.nextLine());
@@ -244,26 +245,7 @@ public class App {
 
     }
 
-    public static void pilhaMatricula(){
-
-        //System.out.println("Qual o código de matrícula a ser empilhado?");
-        //int codigoMatricula = teclado.nextInt();
-
-        Integer[] matricula = {8, 3, 9, 2, 5, 6};
-
-        Pilha<Integer> matriculaPilha = new Pilha<>();
-
-        for(int i = 0; i< matricula.length; i++){
-            matriculaPilha.empilhar(matricula[i]);
-        }
-
-        
-
-        matriculaPilha.imprimePilha(matriculaPilha);
-
-    }
-
-    public static void filaNome(){
+    public static void contarCaracteres(){
 
         Fila<Character> filaNome = new Fila<>();
 
@@ -277,7 +259,7 @@ public class App {
 
         int cont = filaNome.contarCaracter(caractereEscolhido);
 
-        System.out.println("Tem " + cont + "de letras " + caractereEscolhido + " no seu nome!");
+        System.out.println("Tem " + cont + " letras " + caractereEscolhido + " no seu nome!");
 
     }
     
@@ -291,7 +273,7 @@ public class App {
         Pedido pedido = null;
         
         int opcao = -1;
-      
+
         do{
             opcao = menu();
             switch (opcao) {
@@ -301,7 +283,8 @@ public class App {
                 case 4 -> pedido = iniciarPedido();
                 case 5 -> finalizarPedido(pedido);
                 case 6 -> listarProdutosPedidosRecentes();
-                case 7 -> pilhaMatricula();
+                case 7 -> finalizarPedido(pedido);
+                case 8 -> contarCaracteres();
             }
             pausa();
         }while(opcao != 0);       
