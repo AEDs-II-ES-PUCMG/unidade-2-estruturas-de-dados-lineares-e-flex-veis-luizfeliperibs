@@ -71,6 +71,19 @@ public class Fila<E> {
 		return frente.getProximo().getItem();
 
 	}
+
+    Fila<E> extrairLote(int numItens){
+
+        Fila<E> filaDesempilhados = new Fila<>();
+
+        for(int i = 0; i < numItens; i++){
+            if (vazia()) break;
+            filaDesempilhados.enfileirar(desenfileirar());
+        }
+
+        return filaDesempilhados;
+
+    }
 	
 	public void imprimir() {
 		

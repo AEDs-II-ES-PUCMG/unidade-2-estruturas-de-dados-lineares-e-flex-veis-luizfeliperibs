@@ -19,11 +19,16 @@ public class App {
     /** Quantidade de produtos cadastrados atualmente no vetor */
     static int quantosProdutos = 0;
 
+    /** Fila de pedidos */
+    static Fila<Pedido> filaPedidos = new Fila<>();
+
     /** Pilha de pedidos */
     static Pilha<Pedido> pilhaPedidos = new Pilha<>();
 
     /** Pilha de pedidos recentes */
     static Pilha<Produto> pilhaPedidosRecentes = new Pilha<>();
+
+    
         
     static void limparTela() {
         System.out.print("\033[H\033[2J");
@@ -215,6 +220,7 @@ public class App {
     public static void finalizarPedido(Pedido pedido) {
     	
         pilhaPedidos.empilhar(pedido);
+        filaPedidos.enfileirar(pedido);
 
         ItemDePedido[] itensDoPedido = pedido.getItensDoPedido();
 
