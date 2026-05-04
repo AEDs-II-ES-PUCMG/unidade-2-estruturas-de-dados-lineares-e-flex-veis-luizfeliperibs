@@ -256,6 +256,24 @@ public class App {
         matriculaPilha.imprimePilha(matriculaPilha);
 
     }
+
+    public static void filaNome(){
+
+        Fila<Character> filaNome = new Fila<>();
+
+        Character[] vetorCaracteres = {'l', 'u', 'i', 'z', 'f', 'e', 'l', 'i', 'p', 'e'};
+
+        for(int i = 0; i<vetorCaracteres.length; i++){
+            filaNome.enfileirar(vetorCaracteres[i]);
+        }
+
+        Character caractereEscolhido = 'i';
+
+        int cont = filaNome.contarCaracter(caractereEscolhido);
+
+        System.out.println("Tem " + cont + "de letras " + caractereEscolhido + " no seu nome!");
+
+    }
     
 	public static void main(String[] args) {
 		
