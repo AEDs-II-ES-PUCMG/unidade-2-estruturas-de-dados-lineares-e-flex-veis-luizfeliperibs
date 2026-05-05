@@ -44,23 +44,6 @@ public class Fila<E> {
 		return item;
 	}
 
-    public void quantidadeItens(){
-
-        Celula<E> atual;
-
-        int cont = 0;
-
-        atual = frente.getProximo();
-
-        while(atual != null){
-            cont++;
-            atual = atual.getProximo();
-        }
-
-        this.quantidadeItens = cont;
-
-    }
-
     public int contarCaracter(Character caracter){
 
         Celula<E> atual;
